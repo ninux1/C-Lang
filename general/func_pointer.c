@@ -10,7 +10,8 @@ int main() {
 
  void (*func_ptr)() = NULL;
  func_ptr = &hello;
- func_ptr();   
+ func_ptr();
+ (*func_ptr)();       
  return 0;
 
-} 
+}
