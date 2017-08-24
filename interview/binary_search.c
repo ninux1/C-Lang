@@ -3,9 +3,11 @@
 
 // Implements divide and conquer strategy
 
+// Runtime complexity is O(log N)
+
 int find_index(int a[], int start, int end, int key)
 {
-   int total_elements = (end - start) + 1;
+   //int total_elements = (end - start) + 1;
    int mid = (start + end) / 2;
    int index = 0;
 
