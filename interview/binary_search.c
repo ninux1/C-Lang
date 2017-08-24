@@ -1,31 +1,33 @@
 
 #include<stdio.h>
 
+// Implements divide and conquer strategy
 
 int find_index(int a[], int start, int end, int key)
 {
    int total_elements = (end - start) + 1;
-   int mid = start + end / 2;
+   int mid = (start + end) / 2;
+   int index = 0;
 
    if (key < a[mid])
    {
-       find_index(a, start, mid, key);
+       index = find_index(a, start, mid, key);
    }
    if (key > a[mid])
    {
-       find_index(a, mid+1, total_elements, key);
+       index = find_index(a, mid+1, end, key);
    }
-   if (start == end)
+   if (key == a[mid])
    {
-       return start - 1;
+	return mid;	
    }
-
+   return index;
 }
 int main()
 {
     int a[]={10,20,30,40,50,60,70,80,90,100,200,300};
-    int res = find_index(a, 0, 11, 40);
+    int res = find_index(a, 0, 11, 90);
 
-    printf(" 40 is at %d index in the array\n", res );
+    printf("The key is present at index %d in the array\n",  res );
     return 0;
 }
