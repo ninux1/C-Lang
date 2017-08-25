@@ -1,6 +1,11 @@
 //
 // Created by Ninux-MC on 8/24/2017.
 //
+/*
+ * Assumptions :
+ * Window is of size 3
+ *
+ */
 
 #include<stdio.h>
 
@@ -22,7 +27,7 @@ void sliding_window(int Arr[], int total_elem) {
 
     while ((wsp + 2) != (total_elem)) {
         max = find_max(Arr, wsp, wsp + 2);
-        printf("The Max in this slide is %d\n", max);
+        printf("The Max for this window is %d\n", max);
         wsp += 1;
     }
 }
@@ -32,5 +37,4 @@ int main()
     int total_elem = sizeof(Arr) / sizeof(Arr[0]);
     sliding_window(Arr, total_elem);
     return 0;
-
 }
